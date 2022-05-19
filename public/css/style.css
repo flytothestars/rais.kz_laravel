@@ -1,0 +1,921 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    color: #307fe2;
+  }
+  
+  body {
+    color: #1b1818;
+    font-family: "Montserrat", Helvetica, sans-serif;
+    background: #fff;
+  }
+  
+  h1 {
+    visibility: hidden;
+    display: none;
+  }
+  
+  .container {
+    max-width: 1204px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  .header-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logotype {
+    background-image: url('../images/RAIS_free-file.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+    height: 80px;
+  }
+  
+  .main-menu a {
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .main-menu li:hover {
+    border-top: 4px solid #307fe2;
+    padding-top: 26px;
+  }
+  
+  .main-menu ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .main-menu li {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .social-link__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 6px;
+  }
+  
+  .social-link__header img {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .social-link__header a {
+    padding-right: 20px;
+  }
+  
+  .social-link__header a:last-of-type {
+    padding-right: 0px;
+  }
+  
+  .download-button__link {
+    text-decoration: none;
+  }
+  
+  .download-button__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    background: #307fe2;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+  }
+  
+  /* Cookies */
+  
+  /* End cookies */
+  
+  .hamburger-menu {
+    display: none;
+    visibility: visible;
+  }
+  
+  #menu__toggle {
+    opacity: 0;
+  }
+  
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+  
+  .menu__btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -10px;
+    right: 0px;
+    padding-left: 15px;
+    width: 20px;
+    height: 20px;
+  
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+  
+    width: 100%;
+    height: 3px;
+  
+    background-color: #307fe2;
+  
+    transition-duration: 0.25s;
+  }
+  
+  .menu__btn > span::before {
+    content: "";
+    top: -9px;
+  }
+  
+  .menu__btn > span::after {
+    content: "";
+    top: 9px;
+  }
+  
+  .menu__box {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+  
+    width: 300px;
+    height: 100vh;
+  
+    margin: 0;
+    padding: 20px 0;
+  
+    list-style: none;
+  
+    background-color: #307fe2;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  
+    transition-duration: 0.25s;
+  }
+  
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    position: relative;
+    top: 10px;
+  
+    color: #fff;
+  
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+  
+    text-decoration: none;
+  
+    transition-duration: 0.25s;
+  }
+  
+  .menu__item:hover {
+    background-color: #fff;
+    color: #307fe2;
+  }
+  
+  .hamburger-soclinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-top: 30px;
+    padding-left: 24px;
+  }
+  
+  .menu_banner {
+    display: none;
+    position: absolute;
+    top: 92vh;
+  }
+  
+  /* РљРѕРЅРµС† РјРѕР±РёР»СЊРЅРѕРіРѕ РјРµРЅСЋ */
+  
+  .hero {
+    position: relative;
+    top: 80px;
+    width: 100%;
+    height: 480px;
+    background-image: url('https://melhordolar.com.br/wp-content/uploads/2020/04/Melhor-Carregador-Portatil.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .hero-block {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .hero-title {
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 130%;
+    margin-top: 110px;
+    color: #fff;
+  }
+  
+  .ua-title {
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 130%;
+    margin-top: 110px;
+    color: #fff;
+  }
+  
+  .hero-title-smaller {
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 130%;
+    margin-top: 110px;
+    color: #fff;
+  }
+  
+  .hero-subtitle {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #ffffff;
+    margin-top: 12px;
+  }
+  
+  .hero-download {
+    padding-top: 62px;
+    margin: 0 auto;
+  }
+  
+  .hero-download__link:nth-of-type(1) {
+    margin-right: 20px;
+  }
+  
+  h2 {
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 140%;
+  }
+  
+  .how-to-rent__grid {
+    position: relative;
+    top: 80px;
+    margin-top: 100px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  
+  .how-to-rent__number {
+    color: #fff;
+    background: #307fe2;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  
+  .how-to-rent__inner {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    align-items: flex-start;
+    font-size: 18px;
+    line-height: 150%;
+    margin-top: 42px;
+  }
+  
+  h3 {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .scooters-grid {
+    position: relative;
+    top: 80px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+  }
+  
+  .scooter-item__header {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 140%;
+  }
+  
+  .scooter-item__bigblock {
+    font-size: 18px;
+    line-height: 150%;
+    margin-bottom: 80px;
+  }
+  
+  .scooter-item__secondblock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+  
+  .scooter-item__seconditem img {
+    margin-bottom: 20px;
+  }
+  
+  .second-item__text {
+    font-size: 18px;
+    line-height: 150%;
+  }
+  
+  .second-item__subheader {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .blue-block {
+    width: 100%;
+    height: 240px;
+    background-color: #307fe2;
+    position: relative;
+    top: 80px;
+    margin-top: 40px;
+  }
+  
+  .grid-apps {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    color: #fff;
+    padding-top: 70px;
+  }
+  
+  .grid-apps__header {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .grid-apps__text {
+    font-size: 18px;
+    line-height: 150%;
+  }
+  
+  .hero-download__footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Footer */
+  
+  .footer {
+    position: relative;
+    top: 80px;
+    background-color: #000000;
+    color: #fff;
+    width: 100%;
+    height: 265px;
+  }
+  
+  .footer-menu {
+    list-style-type: none;
+  }
+  
+  .footer-menu__link {
+    color: #fff;
+    text-decoration: none;
+    line-height: 290%;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-top: 45px;
+  }
+  
+  .white-logotype {
+    background-image: url(../img/jet-logo-white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 70px;
+    height: 27px;
+  }
+  
+  .footer-text__small {
+    font-size: 12px;
+    line-height: 180%;
+    margin-top: 20px;
+  }
+  
+  .footer-email {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-item:last-child {
+    text-align: right;
+    line-height: 210%;
+  }
+  
+  .payments-methods {
+    padding-top: 10px;
+  }
+  
+  .payments-methods img {
+    width: 80px;
+  }
+  
+  .subfooter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 36px;
+    background-color: #090909;
+    position: relative;
+    top: 80px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 100;
+  }
+  
+  @media (max-width: 420px) {
+    .container {
+      max-width: 320px;
+    }
+  
+    .main-menu {
+      display: none;
+      visibility: hidden;
+    }
+  
+    .header-block {
+      display: grid;
+      grid-template-columns: 4fr 1fr 1fr;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+  
+    .social-link__header a {
+      display: none;
+    }
+  
+    .language a {
+      display: initial;
+    }
+  
+    .download-button__header {
+      display: none;
+    }
+  
+    .download-button__link {
+      display: none;
+    }
+  
+    .download-button__link a {
+      display: none;
+    }
+  
+    .how-to-rent__grid {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+  
+    .how-to-rent__item img {
+      max-width: 320px;
+    }
+  
+    .how-to-rent__item:first-of-type {
+      margin-bottom: 60px;
+    }
+  
+    .scooters-grid {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+  
+    .scooter-item img {
+      max-width: 320px;
+    }
+  
+    .grid-apps {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .language {
+      margin-right: 20px;
+    }
+    /* РќР°С‡Р°Р»РѕРј Р±Р»РѕРєР° РјРѕР±РёР»СЊРЅРѕРіРѕ РјРµРЅСЋ */
+  
+    .hamburger-menu {
+      display: initial;
+      visibility: visible;
+    }
+  
+    #menu__toggle {
+      opacity: 0;
+    }
+  
+    #menu__toggle:checked ~ .menu__btn > span {
+      transform: rotate(45deg);
+    }
+  
+    #menu__toggle:checked ~ .menu__btn > span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+  
+    #menu__toggle:checked ~ .menu__btn > span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+  
+    #menu__toggle:checked ~ .menu__box {
+      visibility: visible;
+      left: 0;
+    }
+  
+    .menu__btn {
+      display: flex;
+      align-items: center;
+      position: relative;
+      top: -10px;
+      right: 0px;
+      padding-left: 15px;
+      width: 20px;
+      height: 20px;
+  
+      cursor: pointer;
+      z-index: 1;
+    }
+  
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+      display: block;
+      position: absolute;
+  
+      width: 100%;
+      height: 3px;
+  
+      background-color: #307fe2;
+  
+      transition-duration: 0.25s;
+    }
+  
+    .menu__btn > span::before {
+      content: "";
+      top: -9px;
+    }
+  
+    .menu__btn > span::after {
+      content: "";
+      top: 9px;
+    }
+  
+    .menu__box {
+      display: block;
+      position: fixed;
+      z-index: 9999;
+      visibility: hidden;
+      top: 0;
+      right: -100%;
+  
+      width: 300px;
+      height: 100vh;
+  
+      margin: 0;
+      padding: 20px 0;
+  
+      list-style: none;
+  
+      background-color: #307fe2;
+      box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  
+      transition-duration: 0.25s;
+    }
+  
+    .menu__item {
+      display: block;
+      padding: 12px 24px;
+      position: relative;
+      top: 10px;
+  
+      color: #fff;
+  
+      font-family: "Montserrat", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+  
+      text-decoration: none;
+  
+      transition-duration: 0.25s;
+    }
+  
+    .menu__item:hover {
+      background-color: #fff;
+      color: #307fe2;
+    }
+  
+    .hamburger-soclinks {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 50%;
+      margin-top: 30px;
+      padding-left: 24px;
+    }
+  
+    .menu_banner {
+      display: none;
+      position: absolute;
+      top: 92vh;
+    }
+  
+    .scooter-image {
+      display: none;
+    }
+  
+    /* РљРѕРЅРµС† РјРѕР±РёР»СЊРЅРѕРіРѕ РјРµРЅСЋ */
+  
+    .hero {
+      position: relative;
+      top: 80px;
+      width: 100%;
+      height: 540px;
+      background-image: url();
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  
+    .hero-block {
+      display: grid;
+      text-align: center;
+      justify-content: center;
+    }
+  
+    .hero-title {
+      font-weight: 600;
+      font-size: 55px;
+      line-height: 130%;
+      margin-top: 50px;
+      color: #fff;
+    }
+  
+    .hero-title-smaller {
+      font-weight: 600;
+      font-size: 55px;
+      line-height: 130%;
+      margin-top: 50px;
+      color: #fff;
+    }
+  
+    .hero-subtitle {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 170%;
+      color: #ffffff;
+      margin-top: 20px;
+    }
+  
+    .hero-download {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-top: 40px;
+      margin: 0 auto;
+    }
+  
+    .hero-download__link img {
+      width: 150px;
+    }
+  
+    .hero-download__link:nth-of-type(1) {
+      margin-right: 20px;
+    }
+  
+    h2 {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 120%;
+    }
+  
+    .how-to-rent__number {
+      color: #fff;
+      background: #307fe2;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+  
+    .how-to-rent__inner {
+      display: grid;
+      grid-template-columns: 1fr 9fr;
+      align-items: flex-start;
+      font-size: 18px;
+      line-height: 150%;
+      margin-top: 42px;
+    }
+  
+    h3 {
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+  
+    .scooter-item__header {
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+  
+    .scooter-item__bigblock {
+      font-size: 18px;
+      line-height: 150%;
+      margin-bottom: 40px;
+    }
+  
+    .scooter-item__secondblock {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  
+    .scooter-item__seconditem img {
+      margin-bottom: 20px;
+    }
+  
+    .second-item__text {
+      font-size: 18px;
+      line-height: 150%;
+    }
+  
+    .second-item__subheader {
+      font-size: 25px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+  
+    .blue-block {
+      width: 100%;
+      height: 390px;
+      background-color: #307fe2;
+      position: relative;
+      top: 80px;
+      margin-top: 80px;
+    }
+  
+    .grid-apps__header {
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+  
+    .grid-apps__text {
+      font-size: 18px;
+      line-height: 150%;
+    }
+  
+    .hero-download__footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 30px;
+    }
+  
+    .hero-download__footer img {
+      width: 150px;
+    }
+  
+    /* Footer */
+  
+    .footer {
+      position: relative;
+      top: 80px;
+      background-color: #000000;
+      color: #fff;
+      width: 100%;
+      height: 850px;
+    }
+  
+    .footer-menu {
+      list-style-type: none;
+    }
+  
+    .footer-menu__link {
+      color: #fff;
+      text-decoration: none;
+      line-height: 250%;
+    }
+  
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding-top: 45px;
+    }
+  
+    .white-logotype {
+      background-image: url();
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 70px;
+      height: 27px;
+    }
+  
+    .footer-text__small {
+      font-size: 14px;
+      line-height: 150%;
+      margin-top: 20px;
+    }
+  
+    .footer-email {
+      color: #fff;
+      text-decoration: none;
+    }
+  
+    .footer-item:last-child {
+      text-align: left;
+      line-height: 250%;
+    }
+  
+    .payments-methods {
+      padding-top: 10px;
+    }
+  
+    .payments-methods img {
+      width: 80px;
+    }
+  
+    .subfooter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 60px;
+      background-color: #090909;
+      position: relative;
+      top: 80px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 100;
+    }
+  }
+  
