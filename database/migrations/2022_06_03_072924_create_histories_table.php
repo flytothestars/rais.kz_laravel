@@ -21,6 +21,7 @@ class CreateHistoriesTable extends Migration
             $table->integer('count');
             $table->string('is_active');
             $table->string('time_start');
+            $table->string('money');
             $table->string('time_end')->nullable();
 
             $table->timestamps();

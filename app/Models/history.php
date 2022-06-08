@@ -10,6 +10,6 @@ class history extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_user', 'id_post_first', 'count', 'is_active', 'time_start', 'id_post_second', 'time_end'
+        'id_user', 'id_post_first', 'count', 'is_active', 'time_start', 'id_post_second', 'time_end', 'money',
     ];
 }

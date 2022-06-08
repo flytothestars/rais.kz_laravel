@@ -15,6 +15,8 @@ class CreateTarifsTable extends Migration
     {
         Schema::create('tarifs', function (Blueprint $table) {
             $table->id();
+            $table->string('time_rent');
+            $table->string('money_rent');
             $table->timestamps();
         });
     }

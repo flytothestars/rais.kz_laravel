@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tarif extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'time_rent', 'money_rent'
+    ];
 }
