@@ -9,6 +9,7 @@ class AuthController extends Controller
 {
     public function sendSms(Request $request){
         $_code = rand(000000,999999);
+        error_log($_code);
         $this->send($request->number);
         return response([
             'message' => 'success',
