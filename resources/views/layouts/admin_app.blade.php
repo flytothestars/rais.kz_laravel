@@ -51,7 +51,6 @@
           <img src="#" class="img-circle elevation-2" alt="User Image">
         </div> -->
         <div class="info">
-        <div class="text-white mb-3"> {{ Auth::user()->name }} </div>
         <a class="text-white border border-warning rounded py-1 pl-2 pr-2 mt-2" href="{{ route('logout') }}"
            onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
@@ -96,8 +95,8 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <p>PowerBanks</p>
+                <a href="{{ route('history.index')}}" class="nav-link">
+                  <p>История</p>
                 </a>
               </li>
             </ul>

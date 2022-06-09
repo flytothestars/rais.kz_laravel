@@ -67,16 +67,20 @@
                           {{ $post->slot}}
                       </td>
                       <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm" href="{{ route('postomat.edit', $post['id']) }}">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
+                          <form action="{{ route('postomat.destroy', $post['id']) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm" >
+                                <i class="fas fa-trash">
+                                </i>
+                                Delete
+                            </button>
+                          </form>
                       </td>
                   </tr>
                   @endforeach

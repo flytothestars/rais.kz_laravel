@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
-
+use App\Http\Controllers\Admin\HistoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,4 +24,5 @@ Route::get('/', function () {
 Auth::routes();
 Route::resource('postomat',  PostController::class);
 Route::resource('user',  UserController::class);
+Route::resource('history',  HistoryController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

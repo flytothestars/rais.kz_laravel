@@ -68,7 +68,7 @@ class PostController extends Controller
      */
     public function edit(Postomat $postomat)
     {
-        //
+        return view('admin.post.edit', ['postomat' => $postomat]);
     }
 
     /**
@@ -80,7 +80,15 @@ class PostController extends Controller
      */
     public function update(Request $request, Postomat $postomat)
     {
-        //
+        $postomat->address = $request->address;
+        $postomat->qr_code = $request->qrcode;
+        $postomat->lat = $request->lat;
+        $postomat->lng = $request->lng;
+        $postomat->freeslot = $request->freeslot;
+        $postomat->slot = $request->slot;
+        $postomat->save();
+        return redirect()->back()->withSuccess('Постомат было успешно обновлено!');
+    
     }
 
     /**
@@ -91,6 +99,8 @@ class PostController extends Controller
      */
     public function destroy(Postomat $postomat)
     {
-        //
+        $postomat->delete();
+        return redirect()->back()->withSuccess('Постомат было успешно удалено!');
+    
     }
 }
